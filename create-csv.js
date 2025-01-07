@@ -8,8 +8,7 @@ const OUTPUT_FILE = "dict.csv"
 // 以下に従い、単語、読みのひらがなカタカナを持つデータを定義
 // 最終的には　単語,,,名詞,固有名詞,組織,*,*,*,よみ,ヨミ　というスキームで CSV データとする
 // https://taku910.github.io/mecab/dic.html 
-const companies = {
-  "companies": [
+const companies = [
     {
       "name": "株式会社A",
       "hiragana": "かぶしきがいしゃA",
@@ -66,7 +65,6 @@ const companies = {
       "katakana": "カブシキガイシャK"
     }
   ]
-}
 
 const createCsv = (json) => {
   return json2csv(json, { 
