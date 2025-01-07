@@ -1,9 +1,8 @@
 const { json2csv } = require("json-2-csv")
+const fs = require("fs")
 
 const OUTPUT_DIR = "./out"
 const OUTPUT_FILE = "dict.csv"
-
-import * as fs from "fs"
 
 // DB からデータを仕入れることを想定し、企業データは JSON 定義としてみる
 // 以下に従い、単語、読みのひらがなカタカナを持つデータを定義
