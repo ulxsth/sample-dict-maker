@@ -67,7 +67,18 @@ const companies = [
   ]
 
 const createCsv = (json) => {
-  return json2csv(json, { 
+  const formattedData = json.map(item => ({
+    word: item.name,
+    pos1: "名詞",
+    pos2: "固有名詞",
+    pos3: "組織",
+    pos4: "*",
+    pos5: "*",
+    pos6: "*",
+    reading: item.hiragana,
+    pronunciation: item.katakana
+  }))
+  return json2csv(formattedData, { 
     prependHeader: false,          // ヘッダーを付与しない
     checkSchemaDifferences: true   // 各データのスキーマの違いをチェック
    })
