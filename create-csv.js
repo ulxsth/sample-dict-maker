@@ -68,6 +68,7 @@ const companies = [
 
 const createCsv = (json) => {
   return json2csv(json, { 
+    prependHeader: false,          // ヘッダーを付与しない
     checkSchemaDifferences: true   // 各データのスキーマの違いをチェック
    })
 }
