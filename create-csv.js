@@ -69,15 +69,14 @@ const companies = [
 const createCsv = (json) => {
   const formattedData = json.map(item => ({
     surface: item.name,
-    leftId: "",
-    rightId: "",
+    leftId: "*",
+    rightId: "*",
     cost: 1,      // 一律で小さい値を割り振る
-    pos1: "名詞",
-    pos2: "固有名詞",
-    pos3: "組織",
-    pos4: "*",
-    conjugationType: "*",
-    conjugationForm: "*",
+    wordClass: "名詞",
+    wordClassGenre1: "固有名詞",
+    wordClassGenre2: "組織",
+    wordClassGenre3: "*",
+    pos5: "*",
     baseForm: item.name,
     reading: item.hiragana,
     pronunciation: item.katakana
