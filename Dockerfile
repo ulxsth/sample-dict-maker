@@ -6,4 +6,4 @@ RUN apt install -y mecab mecab-utils mecab-ipadic-utf8
 WORKDIR /home/app
 COPY . .
 
-CMD ["bash"]
+CMD ["/bin/bash"]
