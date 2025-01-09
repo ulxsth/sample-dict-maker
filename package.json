@@ -16,9 +16,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "create-csv": "node create-csv.js"
+    "create-csv": "node create-csv.js",
+    "load-dict": "node load-dict.js"
   },
   "dependencies": {
-    "json-2-csv": "^5.5.7"
+    "json-2-csv": "^5.5.7",
+    "kuromojin": "^3.0.0"
   }
 }
