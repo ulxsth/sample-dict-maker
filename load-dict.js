@@ -1,5 +1,4 @@
 const kuromojin = require('kuromojin');
-const fs = require('fs');
 
 // dict.dic を読み込む
 const dicPath = './dict'
