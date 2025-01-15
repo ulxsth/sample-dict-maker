@@ -2,7 +2,7 @@ const kuromojin = require('kuromojin');
 const fs = require('fs');
 
 // dict.dic を読み込む
-const dicPath = './out/dict.dic'
+const dicPath = './dict'
 
 // サンプル文字列
 const sampleText = 'これは株式会社Aを含むサンプルの文字列です。';

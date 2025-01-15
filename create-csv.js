@@ -5,7 +5,8 @@ const OUTPUT_DIR = "./out"
 const OUTPUT_FILE = "dict.csv"
 
 // DB からデータを仕入れることを想定し、企業データは JSON 定義としてみる
-// 単語、読みのひらがなカタカナを持つデータを定義
+// 以下に従い、単語、読みのひらがなカタカナを持つデータを定義
+// 最終的には　単語,,,名詞,固有名詞,組織,*,*,*,よみ,ヨミ　というスキームで CSV データとする
 // https://taku910.github.io/mecab/dic.html 
 const companies = [
     {
@@ -65,19 +66,15 @@ const companies = [
     }
   ]
 
-// 最終的には　単語,,10,名詞,固有名詞,組織,*,*,*,よみ,ヨミ　というスキームで CSV データとする
 const createCsv = (json) => {
   const formattedData = json.map(item => ({
-    surface: item.name,
-    leftId: "*",
-    rightId: "*",
-    cost: 1,      // 一律で小さい値を割り振る
-    wordClass: "名詞",
-    wordClassGenre1: "固有名詞",
-    wordClassGenre2: "組織",
-    wordClassGenre3: "*",
+    word: item.name,
+    pos1: "名詞",
+    pos2: "固有名詞",
+    pos3: "組織",
+    pos4: "*",
     pos5: "*",
-    baseForm: item.name,
+    pos6: "*",
     reading: item.hiragana,
     pronunciation: item.katakana
   }))
